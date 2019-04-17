@@ -1,0 +1,38 @@
+
+ROWS AND COLUMNS
+
+Declare Row with class="row"
+Declare Column with class="col"
+Remember the 12 Column System
+3 Columns Where 1 Column == sum of other 2
+<Div class="col-6">Test</Div>
+<Div class="col-3">Test</Div>
+<Div class="col-3">Test</Div>
+
+Now modifiers when the size of the screen changes (There are standard screen modifiers in bootstrap)
+For the below example the columns are equal in size for larger screen size but Column1 is twice as big as the other 2 at smaller screen size.
+If you just use "col", the width will be auto generated 
+<Div class="col-sm-6 col-lg-4">Test</Div>
+<Div class="col-sm-3 col-lg-4">Test</Div>
+<Div class="col-sm-3 col-lg-4">Test</Div>
+-- Can read the above as the first column will be 4 columns at the large size and 6 columns at the small size.
+
+can change the order of the column with order-#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
