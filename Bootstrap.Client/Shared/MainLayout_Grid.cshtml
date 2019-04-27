@@ -1,0 +1,44 @@
+﻿@inherits LayoutComponentBase
+
+<style>
+
+    html, app, body{
+        height:100%;
+    }
+
+    .wrapper {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: 40px, auto, 40px;
+    }
+
+    .header {
+        background-color: aqua;
+        grid-column: span 12
+    }
+
+    .footer {
+        background-color: aqua;
+        /*grid-row: 3;*/
+        grid-column: span 12
+    }
+
+    .menu {
+        background-color: azure;
+        /*grid-row: 2;*/
+        grid-column: span 4
+    }
+
+    .content {
+        background-color: blanchedalmond;
+        /*grid-row: 2;*/
+        grid-column: span 8
+    }
+</style>
+
+<div class="wrapper">
+    <div class="header">HEADER</div>
+    <div class="menu">MENU</div>
+    <div class="content">CONTENT</div>
+    <div class="footer">FOOTER</div>
+</div>
