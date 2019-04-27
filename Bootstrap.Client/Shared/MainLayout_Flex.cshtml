@@ -45,6 +45,16 @@
         margin: 5px;
     }
 
+    .contentItemBigger {
+        height: 210px;
+        width: 210px;
+        min-width: 210px;
+        min-height: 210px;
+        background-color: aliceblue;
+        border: 2px solid black;
+        margin: 5px;
+    }
+
     .header {
         background: silver;
     }
@@ -64,6 +74,8 @@
         flex-direction: row;
         justify-content: space-evenly;
         flex-wrap:wrap;
+        align-items:center;
+        align-content:flex-start;
     }
 </style>
 
@@ -112,7 +124,7 @@
             </div>
             <div class="yyy">
                 <div class="contentItem">Content</div>
-                <div class="contentItem">Content</div>
+                <div class="contentItemBigger">Content</div>
                 <div class="contentItem">Content</div>
                 <div class="contentItem">Content</div>
             </div>
