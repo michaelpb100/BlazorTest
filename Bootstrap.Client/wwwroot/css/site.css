@@ -1,113 +1,135 @@
-﻿@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
-@import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
+﻿@import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
 
-/** {
-    font-family: 'Open Sans', sans-serif;
-    box-sizing: border-box;
-    color: #333;
-    font-size: 100%;
-    line-height: 1.5;
+html, body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-body {
-    background-image: url(blacka.jpeg);
-    margin: 0;
-    background-size: cover;
-}
-
-nav {
-    --duration: .5s;
-    --easing: ease-in-out;
+app {
     position: relative;
-    width: 220px;
-    margin: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
-    nav ol {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
+.top-row {
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.main {
+    flex: 1;
+}
+
+    .main .top-row {
+        background-color: #e6e6e6;
+        border-bottom: 1px solid #d6d5d5;
     }
 
-    nav li {
-        margin: -4px 0 0 0;
+.sidebar {
+    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+}
+
+    .sidebar .top-row {
+        background-color: rgba(0,0,0,0.4);
     }
 
-    nav a {
-        display: block;
-        text-decoration: none;
-        background: #fff;
-        transform-origin: 0 0;
-        transition: transform var(--duration) var(--easing), color var(--duration) var(--easing);
-        transition-delay: var(--delay-out);
+    .sidebar .navbar-brand {
+        font-size: 1.1rem;
+    }
+
+    .sidebar .oi {
+        width: 2rem;
+        font-size: 1.1rem;
+        vertical-align: text-top;
+        top: -2px;
+    }
+
+.nav-item {
+    font-size: 0.9rem;
+    padding-bottom: 0.5rem;
+}
+
+    .nav-item:first-of-type {
+        padding-top: 1rem;
+    }
+
+    .nav-item:last-of-type {
+        padding-bottom: 1rem;
+    }
+
+    .nav-item a {
+        color: #d7d7d7;
         border-radius: 4px;
-        padding: 1em 1.52em;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        line-height: 3rem;
     }
 
-        nav a:hover {
-            background: #efefef;
+        .nav-item a.active {
+            background-color: rgba(255,255,255,0.25);
+            color: white;
         }
 
-    nav .sub-menu a {
-        font-size: .9em;
-        color: #666666;
-        border-left: 2em solid white;
-        padding: .75em;
-        background: linear-gradient(to right, #dddddd 2px, #ffffff 2px);
+        .nav-item a:hover {
+            background-color: rgba(255,255,255,0.1);
+            color: white;
+        }
+
+.content {
+    padding-top: 1.1rem;
+}
+
+.navbar-toggler {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.valid.modified:not([type=checkbox]) {
+    outline: 1px solid #26b050;
+}
+
+.invalid {
+    outline: 1px solid red;
+}
+
+.validation-message {
+    color: red;
+}
+
+@media (max-width: 767.98px) {
+    .main .top-row {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) {
+    app {
+        flex-direction: row;
     }
 
-        nav .sub-menu a:hover {
-            background: linear-gradient(to right, #dddddd 2px, #efefef 2px);
-        }
-
-    nav header {
-        font-weight: 600;
-        display: block;
-        background: rgba(255, 255, 255, 0.5);
-        transform-origin: 0 0;
-        transition: transform var(--duration) var(--easing), color var(--duration) var(--easing);
-        transition-delay: var(--delay-out);
-        border-radius: 4px;
-        padding: 1em 1.52em;
-    }
-
-        nav header span {
-            border: none;
-            background: transparent;
-            font-size: 1.5em;
-            padding: 0;
-            cursor: pointer;
-            line-height: 1;
-            float: right;
-        }
-
-    nav footer button {
-        position: absolute;
+    .sidebar {
+        width: 250px;
+        height: 100vh;
+        position: sticky;
         top: 0;
-        left: 0;
-        border: none;
-        padding: calc(1em - 2px);
-        width: 100%;
-        transform-origin: 0 0;
-        transition: transform var(--duration) var(--easing);
-        transition-delay: calc(var(--duration) + (.1s * (var(--count) / 2)));
-        cursor: pointer;
-        outline: none;
-        background: #cdcdcd;
-        opacity: 0;
     }
 
-    nav.closed a,
-    nav.closed header {
-        transform: translateY(calc(var(--top) * -1)) scaleY(0.1) scaleX(0.2);
-        transition-delay: var(--delay-in);
-        color: transparent;
+    .main .top-row {
+        position: sticky;
+        top: 0;
     }
 
-    nav.closed footer button {
-        transition-delay: 0s;
-        transform: scaleY(0.7) scaleX(0.2);
-    }*/
+    .main > div {
+        padding-left: 2rem !important;
+        padding-right: 1.5rem !important;
+    }
 
-    
+    .navbar-toggler {
+        display: none;
+    }
 
+    .sidebar .collapse {
+        /* Never collapse the sidebar for wide screens */
+        display: block;
+    }
+}
