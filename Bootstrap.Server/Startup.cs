@@ -33,12 +33,15 @@ namespace Bootstrap.Server
                 app.UseBlazorDebugging();
             }
 
-            app.UseMvc(routes =>
-            {
-                routes.MapRoute(name: "default", template: "{controller}/{action}/{id?}");
-            });
+            app.UseClientSideBlazorFiles<Client.Startup>();
 
-            app.UseBlazor<Client.Startup>();
+            app.UseRouting();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapDefaultControllerRoute();
+                endpoints.MapFallbackToClientSideBlazor<Client.Startup>("index.html");
+            });
         }
     }
 }
